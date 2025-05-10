@@ -8,7 +8,8 @@ from sentence_transformers import SentenceTransformer
 app = FastAPI()
 
 # Load FAISS index and metadata
-model = SentenceTransformer("all-MiniLM-L6-v2")
+# model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("paraphrase-MiniLM-L3-v2")  # ~40MB model
 index = faiss.read_index("embeddings/shl_index.faiss")
 meta = pd.read_csv("embeddings/shl_meta.csv")
 
